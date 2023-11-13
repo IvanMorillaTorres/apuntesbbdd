@@ -1,10 +1,12 @@
+orden para crear las bases de datos:
+1a fase , excel con las entidades de todas las tablas que hemos creado y todos sus datos que queremos implementar, con su ddominio, su pk , y toda la info.
+2a faste, diagrama entidad relacion (a-----b) el cuadradito sin mas,con el nombre, con la cardinalidad y la pk y 3 atributos.
+3a fase, vamos a hacer las tablas del mmodelo relacional con las pk y las fk, minimo sus 3 atributos , con las relaciones hechas, las tablas intermedias con las pk y sus dos fk de las tablas de N a N.
+
+Create database; CREA UNA BASE DE DATOS
 Show databases;  ENSEÑA LAS BASES DE DATOS
 
 Show tables; muestra las tablas de una base de datos
-
-USE para "entrar a la base de datos"
-
-Create database; CREA UNA BASE DE DATOS
 
 Varchar CADENAD E LONGITUD FIJA
 
@@ -55,15 +57,15 @@ INTEGRIDAD REFERENCIAL
 2.LO DOS TIPOS DE DATOS DE LOS CAMPOS A RELACIONAR DEBEN SER LOS MISMOS
 3. CUANDO METAMOS DATOS EN LA CLAVE FORANEA DEBE ESTAR EN LAPRINICIPAL TMABIÉN
 
-
 -- 
 ALTER TABLE tbl_padro MODIFY NOMBREDELACOLUMNA char(10) NOT NULL ;(O EL TIPO DE DATOS QUE QUERAMOS)
 
-
 -- ESTABLIM LA RELACIÓ ENTRE TBL_PADRO Y TBL_HABITATGE
- 
--- FOREIGN KEY
-ALTER TABLE habitatge
-    add contraint `nom_FK_habitatge_a_municipi` FOREIGN KEY(``)
-    REFERENCES tbl_municipi (`codi_postal`);
 
+ALTER TABLE tbl_padro
+-- voy a modificar esa tabla
+    add constraint `fk_padro_hbaitatge` FOREIGN KEY(`direccio_padro`)
+    -- voy a añadirle la restriccion que se va a llamar fk_(y las dos tablas con un guion en medio para no liarme), 
+    -- en la que la foreign key va a ser (y el nombre que le quiera poner)
+    REFERENCES `tbl_habitatge` (`num_cat`);
+    -- y hace referencia a/ va estar el campo afectado de la tabla `tbl_laquesea`(el campoquesea)
