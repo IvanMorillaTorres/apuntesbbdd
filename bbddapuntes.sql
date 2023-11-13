@@ -2,6 +2,8 @@ Show databases;  ENSEÑA LAS BASES DE DATOS
 
 Show tables; muestra las tablas de una base de datos
 
+USE para "entrar a la base de datos"
+
 Create database; CREA UNA BASE DE DATOS
 
 Varchar CADENAD E LONGITUD FIJA
@@ -59,9 +61,9 @@ ALTER TABLE tbl_padro MODIFY NOMBREDELACOLUMNA char(10) NOT NULL ;(O EL TIPO DE 
 
 
 -- ESTABLIM LA RELACIÓ ENTRE TBL_PADRO Y TBL_HABITATGE
-
-ALTER TABLE tbl_padro
-    add contraint `fk_padro_hbaitatge` FOREIGN KEY
-    (`direccio_padro`)
-    REFERENCES `tbl_habitatge` (`num_cat`);
+ 
+-- FOREIGN KEY
+ALTER TABLE habitatge
+    add contraint `nom_FK_habitatge_a_municipi` FOREIGN KEY(``)
+    REFERENCES tbl_municipi (`codi_postal`);
 
